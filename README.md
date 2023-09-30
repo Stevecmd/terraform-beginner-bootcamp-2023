@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023
 
-![architectural-diagram](https://github.com/Stevecmd/terraform-beginner-bootcamp-2023/assets/terratowns.png)
+![architectural-diagram](assets/terratowns.png)
 
 
 ## Weekly Journals
