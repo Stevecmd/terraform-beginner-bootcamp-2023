@@ -33,3 +33,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 node_modules
+
+#Ignore notes file
+notes.md
