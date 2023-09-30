@@ -1,5 +1,29 @@
 # Terraform Beginner Bootcamp 2023!
 
+## Table of Contents
+- [Semantic versioning](#semantic-versioning-mage)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+- [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+- [Considerations for Linux Distribution](#considerations-for-linux-distribution)
+- [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+- [Shebang Considerations](#shebang-considerations)
+- [Execution Considerations](#execution-considerations)
+- [Linux Permissions Considerations](#linux-permissions-considerations)
+- [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
+- [Working with Env Vars](#working-with-env-vars)
+- [SETTING AND UNSETTING ENV VARS IN THE TERMINAL](#setting-and-unsetting-env-vars-in-the-terminal)
+- [Printing Env Vars](#printing-env-vars)
+- [Scoping of Env Vars](#scoping-of-env-vars)
+- [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
+- [Terraform Basics](#terraform-basics)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+
 ## Semantic Versioning :mage:
 
 This project is going to utilize semantic versioning for its tagging.
