@@ -304,3 +304,11 @@ Provide the following code (replace your terraform cloud token in the file):
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
 
 
+### Delete an S3 Bucket manually
+```bash
+Use the following command to remove all objects from the bucket recursively:
+aws s3 rm s3://<Bucket-name> --recursive
+
+After ensuring the bucket is empty, use this command to delete it:
+aws s3api delete-bucket --bucket <Bucket-name>
+```

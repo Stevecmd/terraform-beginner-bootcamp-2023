@@ -114,9 +114,9 @@ module "terrahouse_aws" {
 
 ## Considerations when using ChatGPT to write Terraform
 
-LLMs such as ChatGPT may not be trained on the latest documentation or information about Terraform.
+Large Language Models such as ChatGPT may not be trained on the latest documentation or information about Terraform.
 
-It may likely produce older examples that could be deprecated. Often affecting providers.
+It may produce older examples that could be deprecated; often affecting providers.
 
 ## Working with Files in Terraform
 
@@ -135,7 +135,7 @@ https://developer.hashicorp.com/terraform/language/functions/fileexists
 
 https://developer.hashicorp.com/terraform/language/functions/filemd5
 
-### Path Variable
+### Special Path Variable
 
 In terraform there is a special variable called `path` that allows us to reference local paths:
 - path.module = get the path for the current module
@@ -148,3 +148,41 @@ resource "aws_s3_object" "index_html" {
   key    = "index.html"
   source = "${path.root}/public/index.html"
 }
+
+## Terraform Locals
+
+Locals allows us to define local variables.
+It can be very useful when we need transform data into another format and have referenced a varaible.
+
+```tf
+locals {
+  s3_origin_id = "MyS3Origin"
+}
+```
+[Local Values](https://developer.hashicorp.com/terraform/language/values/locals)
+
+## Terraform Data Sources
+
+This allows use to source data from cloud resources.
+
+This is useful when we want to reference cloud resources without importing them.
+
+```tf
+data "aws_caller_identity" "current" {}
+
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
+```
+[Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+## Working with JSON
+
+We use the jsonencode to create the json policy inline in the hcl.
+
+```tf
+> jsonencode({"hello"="world"})
+{"hello":"world"}
+```
+
+[jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
