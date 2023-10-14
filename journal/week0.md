@@ -212,7 +212,7 @@ Terraform sources their providers and modules from the Terraform registry which 
 - **Providers** is an interface to APIs that allows creation resources in terraform.
 - **Modules** help to make large amount of terraform code modular, portable and sharable.
 
-[Randon Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
+[Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
 
 ### Terraform Console
 
@@ -238,11 +238,12 @@ We can output this changeset ie. "plan" to be passed to an apply, but often you 
 This will run a plan and pass the changeset to be execute by terraform. Apply should prompt yes or no.
 
 If we want to automatically approve an apply we can provide the auto approve flag eg. `terraform apply --auto-approve`
+or `tf apply --auto-approve`
 
 #### Terraform Destroy
 
 `teraform destroy`
-This will remove / delete / destroy the resources in the current terraform configuration.
+This will remove / delete / destroy the resources in the current terraform configuration or `tf destroy --auto-approve`.
 
 ##### Tip 
 You can use the auto approve flag to skip the approve prompt when running terraform commands eg. `terraform apply --auto-approve`
@@ -312,3 +313,5 @@ aws s3 rm s3://<Bucket-name> --recursive
 After ensuring the bucket is empty, use this command to delete it:
 aws s3api delete-bucket --bucket <Bucket-name>
 ```
+
+tf apply --auto-approve
