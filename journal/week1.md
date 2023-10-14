@@ -210,3 +210,7 @@ We use the jsonencode to create the json policy inline in the hcl.
 ```
 
 [jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
+
+On cloudfront, when you recreate a distribution you will need to invalidate the cached 
+data. This is done by inputting /* in the object path on your cloudfront consoles'
+invalidation details page.
