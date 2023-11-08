@@ -36,3 +36,7 @@ node_modules
 
 #Ignore notes file
 notes.md
+
+aws/dist
+awscliv2.zip
+aws
