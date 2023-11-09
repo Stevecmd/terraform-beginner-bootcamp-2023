@@ -50,7 +50,7 @@ func Provider() *schema.Provider {
 			},
 			"token": {
 				Type: schema.TypeString,
-				Sensitive: true, // mark the token as sensitive to hide it the logs
+				Sensitive: true, // mark the token as sensitive to hide it in the logs
 				Required: true,
 				Description: "Bearer token for authorization",
 			},
@@ -88,6 +88,7 @@ func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
 		return &config, nil
 	}
 }
+
 
 func Resource() *schema.Resource {
 	log.Print("Resource:start")
