@@ -46,11 +46,11 @@ func Provider() *schema.Provider {
 			"endpoint": {
 				Type: schema.TypeString,
 				Required: true,
-				Description: "The endpoint for the external service",
+				Description: "The endpoint for hte external service",
 			},
 			"token": {
 				Type: schema.TypeString,
-				Sensitive: true, // mark the token as sensitive to hide it in the logs
+				Sensitive: true, // make the token as sensitive to hide it the logs
 				Required: true,
 				Description: "Bearer token for authorization",
 			},
@@ -88,7 +88,6 @@ func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
 		return &config, nil
 	}
 }
-
 
 func Resource() *schema.Resource {
 	log.Print("Resource:start")
