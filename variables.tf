@@ -6,7 +6,7 @@ variable "terratowns_access_token" {
  type = string
 }
 
-variable "user_uuid" {
+variable "teacherseat_user_uuid" {
  type = string
 }
 
