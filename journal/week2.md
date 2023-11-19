@@ -78,3 +78,9 @@ Build first
 ./bin/build_provider
 
 then tf init
+
+Change Terraform cloud credentials.
+To keep the app safe it is better to generate credentials ie an API token
+that expires.
+Once generated, save it in the file:
+```open /home/gitpod/.terraform.d/credentials.tfrc.json```
