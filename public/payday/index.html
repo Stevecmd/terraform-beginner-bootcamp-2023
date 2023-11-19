@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressive Webpage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .hero-section {
+            height: 80vh;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div>
+            <h1>Welcome to My Payday Webpage</h1>
+            <p>Explore the content and get to know more about us.</p>
+            <a href="#about" class="btn btn-light">Learn More</a>
+        </div>
+        <!-- <div>
+            <img src="/assets/pikachu-biker.jpg">
+        </div> -->
+    </div>
+
+    <!-- About Section -->
+    <div class="container mt-5" id="about">
+        <h2>About Us</h2>
+        <p>We're a dedicated team passionate about creating impressive digital solutions for our clients. Dive deeper to find out more about our journey and vision.</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="container mt-5">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="/submit-form" method="POST">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
