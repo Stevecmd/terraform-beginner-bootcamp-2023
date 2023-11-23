@@ -55,14 +55,14 @@ We can set Terraform Cloud variables to be sensitive so they are not shown visib
 
 [Terraform Input Variables](https://developer.hashicorp.com/terraform/language/values/variables)
 
-### var flag
+### [`-var` flag](https://developer.hashicorp.com/terraform/language/values/variables#variables-on-the-command-line)
 We can use the `-var` flag to set an input variable or override a variable in the tfvars file eg. `terraform -var user_uuid="my-user_id"`
 
-### var-file flag
+### [`-var-file` flag](https://developer.hashicorp.com/terraform/language/values/variables#variable-definitions-tfvars-files)
 
 - TODO: document this flag
 
-### terraform.tfvars
+### [`terraform.tfvars`](https://developer.hashicorp.com/terraform/language/values/variables#variable-definitions-tfvars-files)
 
 This is the default file to load in terraform variables in bulk
 
@@ -104,6 +104,10 @@ terraform apply -refresh-only -auto-approve
 ## Terraform Modules
 
 ### Terraform Module Structure
+[Modules](developer.hashicorp.com/terraform/language/modules/develop/structure)
+- Divide the infrastructure into two modules. 
+  - all things storage to the storage module: S3 bucket, bucket policy, State website hosting, AWS caller identity current, 
+  - all things Content Delivery Network to the delivery module.
 
 It is recommended to place modules in a `modules` directory when locally developing modules but you can name it whatever you like.
 
@@ -120,6 +124,12 @@ module "terrahouse_aws" {
 }
 ```
 
+### Fixes can be done using `terraform refresh`
+
+```sh
+terraform apply --refresh-only --auto-approve
+```
+
 ### Module Sources
 
 Using the source we can import the module from various places eg:
@@ -133,8 +143,28 @@ module "terrahouse_aws" {
 }
 ```
 
-
 [Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+### Fixing Tags
+
+[How to delete local and remote tags on Git](https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/)
+
+- `git tag -d <tag_name>`: locally delete a tag
+- `git push --delete origin <tag_name>`: remotely delete tag
+
+#### Fixing previous tags (non-HEAD tags)
+1) `Checkout` the commit that you want to re-tag.   
+2) Grab the SHA from your Github commit history.  
+3) Then run the following commands:
+
+```sh
+git checkout <SHA>
+git tag M.M.P
+git push --tags
+git checkout main
+```
+
+<br>
 
 ## Considerations when using ChatGPT to write Terraform
 
@@ -288,3 +318,17 @@ For each allows us to enumerate over complex data types
 This is mostly useful when you are creating multiples of a cloud resource and you want to reduce the amount of repetitive terraform code.
 
 [For Each Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
+
+## Resources 
+- [Standard Module Structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+- [Input Variables](https://developer.hashicorp.com/terraform/language/values/variables)
+- [Import](https://developer.hashicorp.com/terraform/cli/import)
+- [S3 bucket import](registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+- [Terraform Import](registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string#import)
+- [Modules](developer.hashicorp.com/terraform/language/modules/develop/structure)
+- [Module sources](developer.hashicorp.com/terraform/language/modules/sources)
+- [Resource: aws_s3_bucket_website_configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration)
+- [Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+- [Data Source: aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)
+- [Locals](https://developer.hashicorp.com/terraform/language/values/locals)
+- [The for_each Meta-Argument](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
