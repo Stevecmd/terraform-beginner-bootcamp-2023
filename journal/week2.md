@@ -84,3 +84,10 @@ To keep the app safe it is better to generate credentials ie an API token
 that expires.
 Once generated, save it in the file:
 ```open /home/gitpod/.terraform.d/credentials.tfrc.json```
+
+<br>
+
+## Resources 
+- [Ruby gems](https://rubygems.org)
+- [Sinatra server](https://sinatrarb.com/)
+- [Ruby on Rails - Active Model](https://guides.rubyonrails.org/active_model_basics.html)
